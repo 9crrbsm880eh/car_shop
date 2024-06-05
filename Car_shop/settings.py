@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vz_+o3#oihzx1&)kexx)=&29zxl)97^#k73^ajp$7%lt8fk3_0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['car-shop-2zp2.onrender.com']
 
