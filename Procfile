@@ -1,1 +1,1 @@
-web: gunicorn Sportservice.wsgi
+web: gunicorn Car_shop.wsgi
