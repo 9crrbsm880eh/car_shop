@@ -1,9 +1,13 @@
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.utils.deprecation import MiddlewareMixin
 
 
-class ExceptionHandlingMiddleware(MiddlewareMixin):
+class NotFoundMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
 
-    def process_exception(self, request, exception):
-        return redirect(reverse('not_found'))
+    def __call__(self, request):
+        response = self.get_response(request)
+        if response.status_code >= 400:
+            return redirect(reverse('not_found'))
+        return response

@@ -115,5 +115,3 @@ class CommentDeleteView(View):
 class NotFoundView(TemplateView):
     template_name = '404_template.html'
 
-    def get(self):
-        return render(self.request, self.template_name, status=404)
